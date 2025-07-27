@@ -1,0 +1,9 @@
+[package]
+name = "fyrox"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+fyrox = "0.36.2"
+fyrox-impl = "0.36.2"
+winit = "0.30.12"

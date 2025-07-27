@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "init",
+            "type": "shell",
+            "command": [
+                "rustup target add x86_64-pc-windows-gnu"
+            ]
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": [
+                "cd ${input:project}; ",
+                // "cargo build; ",                        // native
+                "cargo build ",                         // cross
+                    "--target x86_64-pc-windows-gnu",
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "project",
+            "description": "",
+            "type": "pickString",
+            "options": [
+                "hello", 
+                "sdl2",
+                "piston",
+                "bevy",
+                "nannou",
+                "fyrox"
+            ]
+        }
+    ]
+}

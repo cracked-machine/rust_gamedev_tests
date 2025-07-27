@@ -1,0 +1,25 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+    "build": { "dockerfile": "Dockerfile" },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer"
+
+            ],
+            "settings": {
+              
+            }
+        }
+    },
+    "containerEnv": {
+        "DISPLAY": "localhost:10.0"
+    },
+    "mounts": [
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+      ],
+    "remoteUser": "user",
+    "containerUser": "user"
+    
+}
